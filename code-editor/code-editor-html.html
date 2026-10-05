@@ -61,13 +61,13 @@
         
         <div class="left-panel">
           <label>HTML Editor</label>
-          <textarea spellcheck="false" onkeyup="run()" placeholder = "<h1><b>hello world!</b></h1> <p>Example of a paragraph...</p>" id="html-input"></textarea>
+          <textarea spellcheck="false" onkeyup="runResults()" placeholder = "<h1><b>hello world!</b></h1> <p>Example of a paragraph...</p>" id="html-input"></textarea>
           
           <label>CSS Editor</label>
-          <textarea spellcheck="false" onkeyup="run()" placeholder ="h1 { color: #DFDFDF;}" id="css-input"></textarea>
+          <textarea spellcheck="false" onkeyup="runResults()" placeholder ="h1 { color: #DFDFDF;}" id="css-input"></textarea>
           
           <label>JavaScript Editor</label>
-          <textarea spellcheck="false" onkeyup="run()" placeholder ="console.log('running log');" id="js-input"></textarea>
+          <textarea spellcheck="false" onkeyup="runResults()" placeholder ="console.log('running log');" id="js-input"></textarea>
         </div>
         
         <div class="right-panel">
@@ -78,21 +78,23 @@
       </div> 
     </section>
 
+    <placeholder>placeholder for download(zip or separate files)</placeholder>
     <placeholder>placeholder for color picker</placeholder>
 
     <footer>
       <p>Placeholder for footer items</p>
+      
     </footer>
 
       <script>
-          function run() {
+          function runResults() {
             let htmlCode = document.getElementById("html-input").value;
             let cssCode = document.getElementById("css-input").value;
             let jsCode = document.getElementById("js-input").value;
             let output = document.getElementById("results-output");
 
-            output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style">;
-            output.contentWindow.eval(jsCode);
+            output.innerHTML = htmlCode; //+ "<style>" + cssCode + "</style">;
+            //output.contentWindow.eval(jsCode);
           }
       </script>
   </body>
