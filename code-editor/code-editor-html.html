@@ -36,8 +36,8 @@
       }
       iframe {
         height: 90%;
-        width: 100 px;
-        border: 4px solid #D4D4D4;
+        width: 100%;
+        border: 4px solid #0C0C0C;
         border-radius: 4px;
         outline: 0;
         margin: 5px;
@@ -91,7 +91,12 @@
             let jsCode = document.getElementById("js-input").value;
             let output = document.getElementById("results-output");
 
-            output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style">;
+            output.contentDocument.body.innerHTML = htmlCode;
+
+            let style = output.contentDocument.createelement('style');
+            style.textContent = cssCode;
+            output.contentDocument.head.appendChild(style);
+                                                             
             //output.contentWindow.eval(jsCode);
             //return output;
           }
