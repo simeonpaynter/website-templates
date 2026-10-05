@@ -97,12 +97,9 @@
             style.textContent = cssCode;
             output.contentDocument.head.appendChild(style);
 
-            try {
-              output.contentWindow.eval(jsCode);
-            } catch (error) {
-              console.error('JavaScript error');
-            }
-          }
+            let script = output.contentDocument.createElement('script');
+            script.textContent = jsCode;
+            output.contentDocument.head.appendChild(script);
       </script>
   </body>
 </html>
