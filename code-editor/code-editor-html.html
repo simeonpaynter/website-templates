@@ -31,6 +31,7 @@
         border-size: 2px;
         border-color: #D4C3FE;
         border-radius: 2px;
+        margin: 5px;
         width: 100%;
         height: 250px;
       }
@@ -40,7 +41,8 @@
         border-size: 4px;
         border-color: #D4C3FE;
         border-radius: 4px;
-        outline:0;
+        outline: 0;
+        margin: 5px;
         background: #FFF;
       }
       
@@ -82,32 +84,16 @@
       <p>Placeholder for footer items</p>
     </footer>
 
-
-      <!-- Internal JavaScript goes here -->
       <script>
           function run() {
-            let htmlCode = document.getElementByID("html-input");
+            let htmlCode = htmlCode = document.getElementByID("html-input");
             let cssCode = document.getElementByID("css-input");
             let jsCode = document.getElementByID("js-input");
-            let output = document.getElementByID("results-output").contentWindow.document;
+            let output = document.getElementByID("results-output");
 
-            output.open();
-            output.write(`
-                <!DOCTYPE html>
-                <html lang="en-US">
-                <head>
-                    <style>${cssCode}</style>
-                </head>
-                <body>
-                    ${htmlCode}
-                    <script>${jsCode}<\/script>
-                </body>
-                </html>
-            `);
-            output.close();
+            output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style">;
+            output.contentWindow.eval(jscode.value);
           }
-            //output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style">;
-            //output.contentWindow.eval(jsCode.value);
       </script>
   </body>
 </html>
