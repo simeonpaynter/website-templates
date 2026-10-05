@@ -93,12 +93,15 @@
 
             output.contentDocument.body.innerHTML = htmlCode;
 
-            let style = output.contentDocument.createelement('style');
+            let style = output.contentDocument.createElement('style');
             style.textContent = cssCode;
             output.contentDocument.head.appendChild(style);
-                                                             
-            //output.contentWindow.eval(jsCode);
-            //return output;
+
+            try {
+              output.contentWindow.eval(jsCode);
+            } catch (error) {
+              console.error('JavaScript error');
+            }
           }
       </script>
   </body>
