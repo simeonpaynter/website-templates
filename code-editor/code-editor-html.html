@@ -91,7 +91,7 @@
             let jsCode = document.getElementById("js-input").value;
             let output = document.getElementById("results-output");
 
-            output.contentDocument.body.innerHTML = htmlCode; //+ "<style>" + cssCode + "</style">;
+            output.contentDocument.body.innerHTML = htmlCode + "<style>" + cssCode + "</style">;
             //output.contentWindow.eval(jsCode);
             //return output;
           }
