@@ -1,1 +1,64 @@
 
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML, CSS, JavaScript Code Editor - Simeon Paynter</title>
+    <!-- CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: #D4D4D4;
+        font-family: "Poppins", Roboto, arial, sans-serif;
+      }
+      .editor {
+        background-color: #111111;
+      }
+      #html-input, #css-input, #js-input {
+        background-color: #222222;
+      }      
+      #results-output {
+        background-color: #222222;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>HTML, CSS, JavaScript Code Editor</h1>
+    </header>
+
+    <section class="code editor">
+      <h1>Tool for rapid html, css, and javascript editing.</h1>
+      
+      <div class="editor">
+        
+        <div class="left-panel">
+          <label>HTML Editor</label>
+          <textarea id="html-input"></textarea>
+          
+          <label>CSS Editor</label>
+          <textarea id="css-input"></textarea>
+          
+          <label>JavaScript Editor</label>
+          <textarea id="js-input"></textarea>
+        </div>
+        
+        <div class="right-panel">
+          <label>Results</label>
+          <iframe id="results-output"></iframe>
+        </div>
+      
+      </div> 
+    </section>
+
+    <placeholder>placeholder for color picker</placeholder>
+
+    <footer>
+      <p>Placeholder for footer items</p>
+    </footer>
+  
+  </body>
+</html>
