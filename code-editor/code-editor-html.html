@@ -67,7 +67,7 @@
           <textarea spellcheck="false" onkeyup="runResults()" placeholder ="h1 { color: #DFDFDF;}" id="css-input"></textarea>
           
           <label>JavaScript Editor</label>
-          <textarea spellcheck="false" onkeyup="runResults()" placeholder ="console.log('running log');" id="js-input"></textarea>
+          <textarea spellcheck="false" onkeyup="runResults()" placeholder ="javascript" id="js-input"></textarea>
         </div>
         
         <div class="right-panel">
@@ -95,6 +95,7 @@
 
             output.innerHTML = htmlCode; //+ "<style>" + cssCode + "</style">;
             //output.contentWindow.eval(jsCode);
+            return output;
           }
       </script>
   </body>
