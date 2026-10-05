@@ -56,18 +56,18 @@
         
         <div class="left-panel">
           <label>HTML Editor</label>
-          <textarea spellcheck="false" id="html-input"></textarea>
+          <textarea spellcheck="false" onkeyup="run()" id="html-input"></textarea>
           
           <label>CSS Editor</label>
           <textarea id="css-input"></textarea>
           
           <label>JavaScript Editor</label>
-          <textarea pellcheck="false" id="js-input"></textarea>
+          <textarea pellcheck="false" onkeyup="run()" id="js-input"></textarea>
         </div>
         
         <div class="right-panel">
           <label>Results</label>
-          <iframe pellcheck="false" id="results-output"></iframe>
+          <iframe pellcheck="false" onkeyup="run()" id="results-output"></iframe>
         </div>
       
       </div> 
@@ -78,6 +78,19 @@
     <footer>
       <p>Placeholder for footer items</p>
     </footer>
-  
+
+
+      <!-- Internal JavaScript goes here -->
+      <script>
+          function run() {
+            let htmlCode = document.getElementByID("html-input");
+            let cssCode = document.getElementByID("css-input");
+            let jsCode = document.getElementByID("js-input");
+            let output = document.getElementByID("results-output");
+
+            output.contentDocument.body.innerHTML = htmlCode.value + "<style>" + cssCode.value + "</style">;
+            output.contentWindow.eval(jsCode.value);
+          }
+      </script>
   </body>
 </html>
