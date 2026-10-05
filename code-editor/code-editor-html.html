@@ -15,9 +15,9 @@
       }
       .editor {
         display: flex;
-        flex: wrap row;
-        background-color: #111111;
+        flex: wrap;
         text-align: start;
+        width: 100%;
         gap: 48px;
       }
       label {
@@ -57,18 +57,18 @@
         
         <div class="left-panel">
           <label>HTML Editor</label>
-          <textarea id="html-input"></textarea>
+          <textarea spellcheck="false" id="html-input"></textarea>
           
           <label>CSS Editor</label>
           <textarea id="css-input"></textarea>
           
           <label>JavaScript Editor</label>
-          <textarea id="js-input"></textarea>
+          <textarea pellcheck="false" id="js-input"></textarea>
         </div>
         
         <div class="right-panel">
           <label>Results</label>
-          <iframe id="results-output"></iframe>
+          <iframe pellcheck="false" id="results-output"></iframe>
         </div>
       
       </div> 
