@@ -18,6 +18,9 @@
         width: 100%;
         gap: 48px;
       }
+      .right-panel {
+        width: 750px;
+      }
       label {
         display: flex;
         align-items: center;
@@ -97,9 +100,6 @@
             style.textContent = cssCode;
             output.contentDocument.head.appendChild(style);
 
-            let script = output.contentDocument.createElement('script');
-            script.textContent = jsCode;
-            output.contentDocument.head.appendChild(script);
       </script>
   </body>
 </html>
