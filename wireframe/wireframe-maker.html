@@ -23,6 +23,15 @@
         height: 100%;
         width: 25%;
       }
+      .component-preset {
+        background: #3C3C3C;
+        padding: 20px;
+        margin: 5px;
+        border: 2px dashed #555555;
+        border-radius: 5px;
+        cursor: grab;
+        user-select: none;
+      }
       main {
         justify-content: center;
         height: 100%;
@@ -45,11 +54,11 @@
       <h3>Global Design Styles</h3>
       <div class="design-picker">
         <label>Primary Design</label>
-        <input type="color" id="design-primary" value="#3B82F6"> <!-- onchange="updateTokens()"-->
+        <input type="color" id="design-primary" value="#3B82F6" onchange=updateColors()>
       </div>
       <div class="design-picker">
         <label>Secondary Design</label>
-        <input type="color" id="design-secondary" value="#3B82F6"> <!-- onchange="updateTokens()"-->
+        <input type="color" id="design-secondary" value="#10B981" onchange=updateColors()>
       </div>
 
       <h3>Wireframe Blocks</h3>
@@ -71,5 +80,13 @@
         <!-- User will drag and drop components here, using JavaScript to update the DOM-->
       </div>
     </main>
+    <script>
+      const canvas = document.getElementbyId('canvas');
+      let globalColors = {primary: '#3B82F6', secondary: '#10B981'}
+      function updateColors() {
+        globalColors.primary = document.getElementByID('design-primary').value;
+        globalColors.secondary = document.getElementByID('design-secondary').value;
+      }
+    </script>
   </body>
 </html>
