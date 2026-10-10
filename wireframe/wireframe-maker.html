@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wireframe Maker</title>
+    <!-- CSS -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        background-color: #D4D4D4;
+        font-family: "Poppins", Roboto, arial, sans-serif;
+      }
+      header {
+        justify-content: start;
+        margin: 10px;
+      }
+      h3 {
+        padding-top: 10px;
+      }
+      .side-panel {
+        justify-content: start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 25%;
+      }
+      input[type="color"] {
+        border: none;
+      }
+      .component-preset {
+        padding: 20px;
+        margin: 5px;
+        border: 2px dashed #555555;
+        border-radius: 5px;
+        cursor: grab;
+        user-select: none;
+      }
+      .component-preset:hover {
+        background: #4A4A4A;
+      }
+      button {
+        justify-content: center;
+        padding: 10px;
+        font-size: 20px;
+      }
+      button: hover {
+        background-color: #555555;
+        color: #FFFFFF;
+        font-size: 22px;
+      }
+      main {
+        margin-left: auto;
+        justify-content: center;
+        height: 100%;
+        width: 70%;
+      }
+      #canvas {
+        height: 812px;
+        width: 375px;
+        background-color: #FFFFFF;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Wireframe Maker</h1>
+      <p>Create wireframes and style guides, using the export button to create ready-to-use HTML, CSS, or JSON Style dictionaries.</p>
+    </header>
+    
+    <section class="side-panel">
+      <h3>Global Design Styles</h3>
+      <div class="design-picker">
+        <label>Primary Design</label>
+        <input type="color" id="design-primary" value="#3B82F6" onchange=updateColors()>
+      </div>
+      <div class="design-picker">
+        <label>Secondary Design</label>
+        <input type="color" id="design-secondary" value="#10B981" onchange=updateColors()>
+      </div>
+
+      <h3>Wireframe Blocks</h3>
+      <div class="component-preset" draggable="true" data-type="header">Header Block</div>
+      <div class="component-preset" draggable="true" data-type="hero">Hero Feature Box</div>
+      <div class="component-preset" draggable="true" data-type="button">Action Button</div>
+      <div class="component-preset" draggable="true" data-type="card">Content Card</div>
+
+      <h3>Export</h3>
+      <button onclick="">Export HTML Template</button>
+      <button onclick="">Export JSON Template</button>
+      <button onclick="">Export CSS Style Dictionary</button>
+    </section>
+    
+    <main>
+      <h3>Canvas</h3>
+      <p>Drag and drop components, update the styles, and export for rapid prototyping.</p>
+      <div id="canvas">
+        <!-- User will drag and drop components here, using JavaScript to update the DOM-->
+      </div>
+    </main>
+    <script>
+      const canvas = document.getElementById('canvas');
+      let globalColors = {primary: '#3B82F6', secondary: '#10B981'};
+      function updateColors() {
+        globalColors.primary = document.getElementById('design-primary').value;
+        globalColors.secondary = document.getElementById('design-secondary').value;
+      }
+    </script>
+  </body>
+</html>
